@@ -11,15 +11,19 @@ void initlist(sqlist &L){
     }
     L.length=0;
 }  
-void listinsert(sqlist &L,int i,int e){
+void listinsert(sqlist &L,int i,int a){
     for(int j=L.length;j>=i;j--){
         L.value[j]=L.value[j-1];
     }
-        L.value[i-1]=e;
+        L.value[i-1]=a;
         L.length++;
 }
 void listdelete(sqlist &L,int i,int &e){
-    
+    e=L.value[i-1];
+    for(int j=i;j<L.length;j++){
+        L.value[j-1]=L.value[j];
+    }
+    L.length--;
 }
 int main(){
     sqlist L;
@@ -30,9 +34,12 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>L.value[i];
     }
-    listinsert(L,3,3);
+    int e=-1;
+    listdelete(L,3,e);
     for(int i=0;i<L.length;i++){
         cout<<L.value[i]<<" ";
     }
+    cout<<endl;
+    cout<<e;
     return 0;
 }
