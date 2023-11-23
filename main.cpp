@@ -39,6 +39,7 @@ int main(){
     for(int i=0;i<L.length;i++){
         cout<<L.value[i]<<" ";
     }
+    int n;
     cout<<endl;
     cout<<e;
     return 0;
