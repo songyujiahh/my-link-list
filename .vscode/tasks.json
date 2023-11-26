@@ -35,7 +35,13 @@
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            
+                "-lgraphics64",    //32位的可能要把64去掉，具体自己尝试
+                "-luuid",
+                "-lmsimg32",
+                "-lgdi32",
+                "-limm32",
+                "-lole32",
+                "-loleaut32"
             ],
             "options": {
                 "cwd": "${fileDirname}"
