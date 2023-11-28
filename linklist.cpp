@@ -54,5 +54,4 @@ bool insertnextnode(LNode *p,int e){
 int main(){
     linklist L;
     initlist(L);
-    cout<<L;
 }
